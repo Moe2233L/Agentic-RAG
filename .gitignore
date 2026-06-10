@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# 环境变量
+.env
+
+# 数据
+data/chroma/
+data/knowledge_bases/
+
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# Reasonix
+.reasonix/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
