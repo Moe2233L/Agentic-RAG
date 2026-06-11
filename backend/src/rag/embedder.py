@@ -30,10 +30,6 @@ class BGEEmbeddingFunction:
         self._load()
         return np.array(self._model.encode(texts, batch_size=32)["dense_vecs"], dtype=np.float32)
 
-    def embed_sparse(self, texts: list[str]) -> list[dict[int, float]]:
-        self._load()
-        return [{int(t): float(w) for t, w in lw.items()} for lw in self._model.encode(texts, batch_size=32, return_sparse=True)["lexical_weights"]]
-
     def embed_query(self, text: str) -> tuple[ndarray, dict[int, float]]:
         self._load()
         out = self._model.encode([text], batch_size=1, return_sparse=True)

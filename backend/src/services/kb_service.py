@@ -5,7 +5,6 @@ from pathlib import Path
 KB_ROOT = Path("data/knowledge_bases")
 KB_ROOT.mkdir(parents=True, exist_ok=True)
 META = KB_ROOT / "_meta.json"
-from backend.src.constants import SUPPORTED_EXTENSIONS as SUPPORTED
 
 
 def _load() -> list[dict]:

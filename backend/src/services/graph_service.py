@@ -38,16 +38,6 @@ class GraphService:
             logger.warning(f"Cypher fail: {e}")
             return []
 
-    def search_entity(self, entity: str, hops: int = 2) -> list[dict]:
-        self._connect()
-        c = f"MATCH path = (s:Entity {{text: $e}})-[*1..{hops}]-(o) RETURN [n in nodes(path) | n.text] AS nodes, [r in relationships(path) | r.type] AS rels LIMIT 20"
-        try:
-            with self._driver.session() as s:
-                return [{"path": " → ".join(r["nodes"]), "rels": r["rels"]} for r in s.run(c, e=entity)]
-        except Exception as e:
-            logger.warning(f"Hop fail: {e}")
-            return []
-
     @staticmethod
     def _to_cypher(q: str) -> str:
         ql = q.lower()
