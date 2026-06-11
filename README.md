@@ -30,14 +30,11 @@
 
 ## 架构概览 🏗️
 
-```
-前端 (Vue 3 + TypeScript) ──SSE──→ FastAPI ──→ LangGraph Agent
-                                         │              │
-                                         ├── ChromaDB (向量检索)
-                                         ├── Neo4j (知识图谱)
-                                         ├── Tavily (联网搜索)
-                                         └── ChatOpenAI (LLM)
-```
+![系统架构概览](Architecture%20Overview.jpg)
+
+## 系统流程 🔄
+
+![系统流程图](Flow%20Chart.jpg)
 
 ## 快速开始 🚀
 
